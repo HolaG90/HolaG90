@@ -3,32 +3,68 @@ import reactDom from 'react-dom'
 // importing CSS file . 
 // if the file is a level up then use '../'     depending on how many levels means u have ///to add the dots 
 import './index.css';
-function Greeting() 
-{
-  return (
-    <section className='pageDsign'>
-      <HomePg />
-      <HomePg />
-      <HomePg />
-      <HomePg />
-      <HomePg />
-      <HomePg />
-    </section>
-  );
+
+const firstbook = {
+    title: 'Seven Husband of Evelyn Hugo',
+    author: 'Taylor Jerkind Reid',
+    img:'https://images-na.ssl-images-amazon.com/images/I/71pQQ9mk8eL._AC_UL906_SR906,600_.jpg'
 }
-const HomePg =  () =>{
+const secondbook = {
+    title: 'Finding Me',
+    author: 'Viola Davis',
+    img:'https://images-na.ssl-images-amazon.com/images/I/81nPA5jdLvL._AC_UL906_SR906,600_.jpg'
+}
+
+function Booklist() {
+    return (
+    <section className='booklst'>
+      <Book 
+        img={firstbook.img} 
+        title={firstbook.title} 
+        author={firstbook.author}/>
+      <Book 
+        img={secondbook.img} 
+        title={secondbook.title} 
+        author={secondbook.author}
+      >
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi obcaecati dignissimos eius mollitia! Blanditiis, culpa saepe quibusdam magni aut ratione?</p>
+        
+      </Book>
+    </section>
+    );
+    
+}
+
+
+const Book =  ({img , title , author}) =>{
+  //const {img, title, author} = props;
   return (
-    <article className='chargeShow'>
-      <Image></Image>
-      <Author></Author>
-      <Title></Title>
+    <article className='bookl'>
+      <img src={img} alt="" />
+      <h1> {author}</h1>
+      <h4>{title}</h4>
+
     </article>
+    
   )
 }
 
-const Image = () => <img src="https://cdn.jdpower.com/JDP_Tesla%20Home%20Charging%201.jpg" alt="" />
-const Author = () => <h1> Olayinka Giwa</h1>
-const Title = () => <h3>Home Charging Stations</h3>
 
 
-reactDom.render(<Greeting/>,document.getElementById('root')); 
+
+reactDom.render(<Booklist/>,document.getElementById('root')); 
+
+
+
+
+
+
+
+// const Image = () => <img src="https://images-na.ssl-images-amazon.com/images/I/71pQQ9mk8eL._AC_UL906_SR906,600_.jpg" alt="" />
+// const Author = () => <h1> Taylor Jerkind Reid</h1>
+// //const Title = () => <h3>Seven Wifes of Evelyn Hugo</h3>
+// function Title (){
+//   return(
+//     <h4 style={{color:'#617d98', fontsize:'0.75rem', marginTop:'0.25rem'}}>Seven Husband of Evelyn Hugo</h4>    // this ismore stronger than CSS file . this inline styling 
+//   );
+// }

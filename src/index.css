@@ -10,7 +10,7 @@ body{
     color:#222;
 
 }
-.pageDesign {
+.booklst{
     width: 90vw;
     max-width: 1170px;
     margin: 5rem auto;
@@ -18,17 +18,23 @@ body{
     gap: 2rem;
 }
 @media screen and (min-width: 768px) {
-.pageDesign{
+.booklst{
     grid-template-columns: repeat(3, 1fr);
 }
 }
 
-.chargeShow {
+.bookl {
     background: #fff;
     border-radius: 1rem;
     padding:1rem 2rem;
 }
 
-.HomePg h1 {
+.bookl h1 {
  margin-top: 0.5rem;
+}
+
+.bookl h4{
+    color: #617d98;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
 }
